@@ -20,8 +20,8 @@ class Destination
     #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
 
-    #[ORM\Column(type: Types::DECIMAL, precision: 10, scale: 2)]
-    private ?string $price = null;
+    #[ORM\Column]
+    private ?int $price = null;
 
     #[ORM\Column]
     private ?int $duration = null;

@@ -1,20 +1,51 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello DestinationController!{% endblock %}
+{% block title %}Nos Destinations de Rêve
+{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+	<div class="container py-5">
+		<div class="text-center mb-5">
+			<h1 class="display-4 fw-bold">Explore the world</h1>
+			<p class="lead text-muted">Discover our exclusive destinations for your honeymoon.</p>
+			<hr class="w-25 mx-auto">
+		</div>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+		<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+			{% for destination in destinations %}
+				<div class="col">
+					<div class="card h-100 shadow-sm border-0">
+						<img src="{{ asset('uploads/destinations/' ~ destination.image) }}" class="card-img-top" alt="{{ destination.name }}" style="height: 250px; object-fit: cover;">
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>C:/Users/Ilyasse/code/foo/src/Controller/DestinationController.php</code></li>
-        <li>Your template at <code>C:/Users/Ilyasse/code/foo/templates/destination/index.html.twig</code></li>
-    </ul>
-</div>
+						<div class="card-body">
+							<div class="d-flex justify-content-between align-items-center mb-2">
+								<h5 class="card-title mb-0">{{ destination.name }}</h5>
+								<span class="badge bg-primary rounded-pill">{{ destination.price }}
+									€</span>
+							</div>
+
+							<p class="card-text text-muted">
+								{{ destination.description|slice(0, 100) }}...
+							</p>
+						</div>
+
+						<div class="card-footer bg-transparent border-top-0 pb-3">
+							<div class="d-flex justify-content-between align-items-center">
+								<small class="text-muted">
+									<i class="bi bi-clock"></i>
+									{{ destination.duration }}
+									days
+								</small>
+								<a href="{{ path('app_destination_show', {'id': destination.id}) }}" class="btn btn-outline-primary btn-sm px-4">View Offer</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			{% else %}
+				<div class="col-12 d-flex justify-content-center w-100 text-center">
+					<div class="alert alert-info">No destinations are available at the moment.</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
 {% endblock %}
