@@ -29,12 +29,12 @@ Créez un fichier .env.local à la racine et ajustez vos variables :
 # IV. Initialiser la base de données
   php bin/console doctrine:database:create
   
-  php bin/console doctrine:migrations:migrate --no-interaction
+  php bin/console doctrine:migrations:migrate
 
 # V. Charger les données de test (Fixtures)
 Cela créera des destinations ainsi qu'un utilisateur administrateur.
 
-  php bin/console doctrine:fixtures:load --no-interaction
+  php bin/console doctrine:fixtures:load
 
 # VI. Démarrer le serveur 
 symfony serve
