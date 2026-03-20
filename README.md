@@ -39,7 +39,7 @@ Cela créera des destinations ainsi qu'un utilisateur administrateur.
 # VI. Démarrer le serveur 
 symfony serve
 
-# VII. 🔐 Routes
+# VII. Routes
 Homepage : / (Liste des destinations)
 
 Détail : /destination/{id}
@@ -52,14 +52,14 @@ Administration : /admin
   
 Documentation API : /api
 
-# VIII. 📟 Commandes
+# VIII. Commandes
 Pour générer un rapport CSV des destinations, utilisez la commande suivante :
 
   php bin/console app:export-destinations
   
 Le fichier sera généré dans le dossier var/destinations.csv, et vous pouvez l'ouvrir sur https://csv-viewer-online.github.io/
 
-# IX. 🧪 Tests
+# IX. Tests
 Pour s'assurer de la stabilité du projet, vous pouvez lancer la suite de tests PHPUnit :
 
   php bin/console doctrine:migrations:migrate --env=test
