@@ -3,6 +3,7 @@ Bienvenue sur le projet Foo Trip, une application de gestion de destinations dé
 
 # 🛠️ Pré-requis
   PHP >= 8.4
+  
   Composer
 
 # 🚀 Installation et Configuration
