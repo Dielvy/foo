@@ -38,8 +38,8 @@ Cela créera des destinations ainsi qu'un utilisateur administrateur.
 
 
 
-# 🔐 Accès et Identifiants
-Front-office : / (Liste des destinations)
+# 🔐 Routes
+Homepage : / (Liste des destinations)
 
 Détail : /destination/{id}
 
