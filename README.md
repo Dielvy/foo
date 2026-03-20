@@ -1,3 +1,48 @@
-# 🌍 Foo Trip - Destination Management System
+# 🌍 Foo Trip 
+Bienvenue sur le projet Foo Trip, une application de gestion de destinations développée avec Symfony 8
 
-Bienvenue sur le projet **Foo Trip**, une application de gestion de destinations développée avec **Symfony 8.4**. Ce projet inclut un back-office complet, une API REST publique et des outils de maintenance en ligne de commande. Pour l'installer, commencez par cloner le projet et basculer sur la branche de développement : `git clone https://github.com/Dielvy/foo.git`, `cd foo`, puis `git checkout dev`. Installez ensuite les dépendances avec `composer install`. Configurez votre environnement en créant un fichier `.env.local` contenant votre `DATABASE_URL="sqlite:///%kernel.project_dir%/var/data.db"` et votre `API_BASE_URL="http://127.0.0.1:8000"`. Initialisez la base de données avec `php bin/console doctrine:database:create` et `php bin/console doctrine:migrations:migrate --no-interaction`. Chargez les données de test avec `php bin/console doctrine:fixtures:load --no-interaction`. Vous pouvez alors lancer le serveur via `symfony serve` ou `php -S 127.0.0.1:8000 -t public`. L'accès au **Front-office** se fait sur `/`, le détail sur `/destination/{id}`, l'**Administration** (EasyAdmin) sur `/admin` (Login: `admin@example.com` / Password: `password`), et la **Doc API** sur `/api`. Pour l'exportation des données en CSV, utilisez la commande `php bin/console app:export-destinations` (le fichier sera généré dans `var/destinations.csv`). Enfin, vous pouvez valider la stabilité du projet en lançant les tests avec `php bin/phpunit`.
+# 🛠️ Pré-requis
+  PHP >= 8.4
+  Composer
+
+# 🚀 Installation et Configuration
+Cloner le projet
+  git clone https://github.com/Dielvy/foo.git
+  cd foo
+  git checkout dev
+
+
+# Installer les dépendances
+  composer install
+
+# Configurer l'environnement
+Créez un fichier .env.local à la racine et ajustez vos variables :
+  DATABASE_URL=""
+  API_BASE_URL="http://127.0.0.1:8000" // URL locale pour les commandes consommant l'API
+
+# Initialiser la base de données
+  php bin/console doctrine:database:create
+  php bin/console doctrine:migrations:migrate --no-interaction
+
+# Charger les données de test (Fixtures)
+Cela créera des destinations ainsi qu'un utilisateur administrateur.
+  php bin/console doctrine:fixtures:load --no-interaction
+
+
+
+# 🔐 Accès et Identifiants
+Front-office : / (Liste des destinations)
+Détail : /destination/{id}
+Administration : /admin
+  Login : admin@example.com
+  Password : password
+Documentation API : /api
+
+# 📟 Commandes
+Pour générer un rapport CSV des destinations, utilisez la commande suivante :
+  php bin/console app:export-destinations
+Le fichier sera généré dans le dossier var/destinations.csv.
+
+# 🧪 Tests
+Pour s'assurer de la stabilité du projet, vous pouvez lancer la suite de tests PHPUnit :
+  php bin/phpunit
