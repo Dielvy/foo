@@ -62,4 +62,6 @@ Le fichier sera généré dans le dossier var/destinations.csv.
 # 🧪 Tests
 Pour s'assurer de la stabilité du projet, vous pouvez lancer la suite de tests PHPUnit :
 
+  php bin/console doctrine:migrations:migrate --env=test
+  
   php bin/phpunit
