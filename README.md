@@ -36,7 +36,8 @@ Cela créera des destinations ainsi qu'un utilisateur administrateur.
 
   php bin/console doctrine:fixtures:load --no-interaction
 
-
+# Démarrer le serveur 
+symfony serve
 
 # 🔐 Routes
 Homepage : / (Liste des destinations)
